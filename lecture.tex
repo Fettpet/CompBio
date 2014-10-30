@@ -1,0 +1,339 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\setlist[description]{style=nextline}
+
+\begin{document}
+\setlength\parindent{0pt}
+
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+
+\textsc{\LARGE Technische Universität Dresden}\\[1.5cm]
+
+\textsc{\Large WS2014}\\[0.5cm]
+
+% Title
+{ \huge \bfseries Networks, Function and Genomics\\[0.4cm] }
+
+% Author and lecturer
+\noindent
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Jan\\
+Marc\\
+Sebastian\\
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Lecturer:} \\
+Prof. Michael \textsc{Schroeder}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+
+Als Programm wird benutzt
+Cytascape
+
+\section{Vorlesung}
+
+\subsection{Graphen}
+Grundlagen der Graphentheorie wurde von Euler mittels Königsberger Brücker gelegt.
+\\
+\fbox{
+\begin{tabular}{l l}
+Def:&Graph\\
+&Ein Graph ist\\ 
+&G= (V, E) \\
+&V: Vertex (Knoten)\\
+&E: Edges (Kanten)\\
+\end{tabular}
+}
+\\ 
+
+Graphen werden unter anderem für Kürzeste Wege, Zustandbasierten Spielen (z.B. Schach), Ausführreihenfolgen, Abhängigkeiten, Zustandsautomaten, Stammbaum, Genregulierung usw. eingesetzt.
+\\
+
+\fbox{
+\begin{tabular}{l l}
+Def:&Skalenfrei (Scalefree)\\
+&Rich get Richer \\
+\end{tabular}
+}
+\\
+
+\fbox{
+\begin{tabular}{l l}
+Def:& Degree Distribution\\
+&Wie verteilt sich die Anzahl der Nachbarn auf die Anzahl der Knoten. Meist sieht dies so aus.\\ 
+\end{tabular}
+}
+\\
+
+\includegraphics[scale=0.5]{scalefree}\\
+\fbox{
+\begin{tabular}{l l}
+Def:&Performel Preferenz (? Name vll nicht richtig)\\
+&Die mehr haben, kriegen mehr. The rich get richer\\
+\end{tabular}
+}
+
+\subsection{Proteinnetze}
+Artikel: Wie ein Biologe ein Radio untersuchen würde\\
+
+Die Daten gibt es seit 15 Jahren. PDB (Protein database) Enthält 3D Protein Strukturen.\\
+
+Wie weit geht die Wechselwirkung zwischen den Proteinen?\\
+
+Es gibt verschiedene Analyseverfahren:\\
+
+
+Veraltete (ca 2000):
+\begin{enumerate}
+  \item Über die Distanz
+  \item Wie viel Oberfläche wird durch die Interaktion überdeckt
+\end{enumerate}
+
+Problem der Analyse der Überdeckung: Es gibt wenige 3D Strukturen. \\
+
+
+Aktuelle PPI Methoden (ab ca 2003): 
+\begin{enumerate}
+  \item PPB
+  \item Y2H (Yeast 2 Hybrid)
+  \item AP/MS (Afinity prificention with mass spectrometry)
+\end{enumerate}
+
+\subsubsection{Y2H}
+\includegraphics[scale=0.5]{Y2H}\\
+
+Erst wenn irgentwas passiert, passiert irgentwas. In Hefekulturen -> Sequenzierung.
+
+Vorteil:
+Interaktion die nicht stark sind, können detektiert werden. 
+
+Nachteil:
+Komplexe Interaktion mit mehreren Proteinen sind schwierig zu detektieren.
+Findet immer in Hefe statt
+
+\subsubsection{AP/MS (Afinity prificention with mass spectrometry)}
+\includegraphics[scale=0.5]{APMS}\\
+\begin{tabular}{r l}
+P:&Proteinen\\
+B:&Der Köter an dem die Proteine binden\\
+Tag:&Wird an eine Oberfläche gebunden\\
+\end{tabular}
+\\
+
+Schätzungen zufolge gibt es 600.000 Interaktion im Menschlichen Körper\\
+
+Zusammenfassung\\
+Netzwerk spielen überall eine wichtige Rolle\\
+
+Wichtige Datenbanken\\
+String (EMBL): Enthält alles (Über Gene), ist die Wichtigste\\
+HPRD: Daten werden Manuell gepflegt\\
+Biogrid\\
+Intact\\
+DIP\\
+\\
+
+Damit sind viele Daten verfügbar. Darauf kann man die Algorithmen loslassen.\\
+\\
+
+Fragen zu Graph\\
+Wo ist das Zentrum\\
+Wer ist der wichtigste Knoten (laut Degree Distribution)\\
+Wo gut sind lokale Gruppen verdrahtet\\
+\\
+
+\fbox{
+Def Clique:
+Teil das Graphen, in dem Jeder knoten mit jedem anderen verbunden ist. 
+}
+\\
+
+\fbox{
+Def Clusterindex\\
+}
+\\
+
+Ci = $\frac{2n}{ki * (ki – 1)}$\\
+ki: Anzahl der Nachbarn\\
+n: Zahl der Kanten zwischen den Nachbarn\\
+\\
+
+Cluterindex = 1  $\leftrightarrow$ Clique\\
+\\
+
+Je mehr Nachbarn desto schwieriger ist es einen hohen Cluster index zu erhalten\\
+\\
+
+Offen (Was noch nachgetragen werden muss)\\
+Hub\\
+Barizentrum (? Name vll falsch)\\
+
+
+\newpage
+\section{Vorlesung}
+Paper: Google goes Cancer
+
+
+Page Rank. Kommt aus Italien wurde von google genutzt. In Page Rank kommt gibt es einen Score. Dieser Score ist umso höher je mehr Seiten auf die Ziel Seite Verlinken. 
+Gibt Ausschluss über die Qualität der Daten. Bestimmte Gene können ausgefiltert werden. Suche nach Master regulatoren (Gene die viele Gene beeinflussen). 
+
+Kürzeste Pfade um Wirkstoffe zu finden. Gene  verändern ihre Aktivität durch Medikamente. Dies tun sie aber nicht sofort. Finde den Wirkstoff, der die  kürzesten Pfade hat.
+
+Von Knoten i nach j zu gehen. 
+
+mij = 1 / |N(vi)|
+N(vi): Nachbarn von Knoten vi
+
+
+Stationärer Zustand
+M * x = Lambda * x
+M: Stationärer Zustand 
+x: Konfiguration
+Lambda: Ein Scalarer Wert
+
+Power Methode
+
+$M^n * x0 $\\
+Das ganze konvergiert. 
+
+Zusätzlich gibt es noch einen zufälligen Neustart. 
+
+
+Erstellung eines Zufälligen Graphen
+
+Eingabe:
+Anzahl Vertexes
+Anzahl Edges
+
+Algorithmus:
+Erstelle die Vertexes.
+Verbinde zufällig 2 Vertexes zu einer Edge. Solang bis es genug edges gibt
+
+Erder Schring Modell (? Name evt. Nicht richtig)
+Das Modell wie die Degree Distribution in einem Zufälligen Graph aussieht. Die ist eine Gaus Verteilung. 
+
+
+Erstellen eines Scale Free netzwerkes
+Eingabe:
+Anzahl Vertexes
+Anzahl Edgeverteilung.
+
+Algorithmus (? Habe nicht aufgepasst)
+
+
+In Netzwerken kann man Motive finden. Diese kann man für die Kompression nutzen. Ein paar Beispiele sind unten angegeben.\\
+\includegraphics[scale=0.5]{graphvereinfachungen}\\
+
+Offene Fragen:
+Hethrow Situation
+
+\newpage
+\section{Vorlesung - PowerGraphs}
+Graphen zur Analyse von Biologischen Prozessen. 
+
+Für diese Vorlesung wird es auf der Website drei Papers und die Präsentation geben.
+\subsection{from network quality to drug repositioning}
+Bis 2000 war der Forschungsschwerpunkt die Untersuchung von einem spezifischen Gen.
+Die Komplexen Zusammenhänge wurden kaum bis gar nicht betrachtet. 
+2001 Änderte sich dies mit einer Veröffentlichung von Jeong in der "Nature"\footnote{siehe Präsentation Seite 2}. 
+Der Informationsgewinn hatte hier aber seine Grenzen, da dieser Graph schwer analysierbar war.
+\\
+
+"Comprehension is compression" - Gregory Chainitin 
+\\
+
+Wie kann Kompression bei einem Komplexen Graphen erreicht werden?\footnote{siehe Präsentation Seite 5}
+\begin{description}
+  \item[Hubs in networks]\hfill\\ Da es sich meist um Skalenfrei Graphen handelt könnte man Greedy vorgehen.
+  \item[Protein Complexes]\hfill\\ Cliquen können ebenfalls komprimiert werden.
+  \item[Domain and morif-based interactions]\hfill\\ Bi-Cliquen werden auch vereinfacht.
+\end{description}
+
+Diese neue Struktur hat aber auch Nachteile. Es können neue Informationen gewonnen werden, es gehen vielleicht auch
+Informationen verloren.
+\\
+
+Wie erstellt man so einen Graphen?\footnote{Siehe Präsentation Seite 7; Diese Heuristik kann noch optimiert werden.}\\
+Eventuell Greedy über Anzahl der Knoten oder Pfadlänge? $\rightarrow$ Problem: Potenzmenge muss betrachtet werden.\\
+\begin{enumerate}
+  \item Verbesserung hierzu: Da bei der Erstellung von Powerknoten nur direkte Nachbarn in Frage kommen müssen
+        auch nur diese bei der Erstellung betrachtet werden. $\rightarrow$ Nun haben wir eine quadratische Komplexität.\\
+  \item Nach der ersten Kategorisierung werden die Potenzkanten nach ihrer Mächtigkeit sortiert.\footnote{Siehe Seite 7 B}
+  \item Bei der weiteren Vernetzung müssen entweder alle Knoten im Potenzknoten enthalten sein. Falls dies nicht der
+        Fall wäre müsste man die Punkte raus nehmen die nicht überlappen. \footnote{Siehe Seite 7 D}\\
+        Die neuen Vernetzungen müssen in die Liste aufgenommen werden.
+  \item Bei der Zusammenfassung können Redundanzen entstehen.\footnote{Siehe Seite 7 E} Falls dies auftritt können die
+        entsprechenden Knoten aus den Potenzknoten herausgenommen werden.
+  \item Falls Fall D und E nicht auftreten, haben wir den Power Graphen.
+\end{enumerate}
+Bei der Analyse der Power Graphen konnte festgestellt werden, dass Potenzknoten oft zur selben Domäne gehören
+(Bei Cliquen) oder die Funktion bei stark vernetzten Knoten ähnlich sind oder sie eine gemeinsame Funktion haben.
+\footnote{Siehe Seite 8} 
+
+\subsection{Network compression as quality measure}
+Die Kompression kann als Qualitätsmerkmal des Graphen herangezogen werden.
+\footnote{Siehe Seite}\\
+Problem hierbei ist, dass diese Kompression  größenabhängig ist, keine
+Information über Kompressionsart enthält oder die Einordnung der Kompressionsrate
+ist. \\
+Das Problem der Kategorisierung der Ergebnisse ist, dass beim Test oft die
+Ergebnisse nicht Binär sind (zum Beispiel: interagiert oder interagiert nicht).
+Das Rauschen bei den Test könnte kein zufälliges Rauschen sein. (Jan: Ich bin
+mir nicht sicher, ob ich das richtig verstanden habe.)
+\footnote{Siehe Seite "Uniform Noise Model" ff}\\
+Eine Kategorisierung kann auch anhand von Publizierten, gut erforschten Netzwerken
+festlegen. Dieses lässt sich an itoCore und itoFull erkennen.\\
+
+\subsection{Exkurs 1. Vorlesung}
+\subsubsection{AP/MS screening}
+\fbox{%
+  \begin{minipage}{1\textwidth}
+    \begin{description}
+      \item[AP/MS] \hfill \\ Tag bindet an Protein B. Tag wird an Glasplatte befestigt. Proteine
+      bindet an Protein B.\\
+    \end{description}
+  \end{minipage}
+}
+Lässt sich meist gut komprimieren. His tag + cDNA führt manchmal zu schlechten
+Ergebnissen.
+\subsubsection{Y2H}
+Lässt sich schlecht komprimieren.\footnote{Siehe Präsentation}
+\subsubsection{Scalable two-phase pooling strategy}
+Besser als Y2H. Schlechter als AP/MS.\footnote{Siehe Präsentation}
+\subsection{Complete and accurate networks}
+In Biologie kaum komplette und richtige Netzwerke vorhanden. Das Kompressionsverfahren
+Lässt sich aber auch auf alle anderen Graphen anwenden. Beispiele für die Kompression
+lässt sich auch in der Präsentation finden.
+\subsection{Completing incomplete bi-cliques}
+Nur echte Bi-Cliquen werden komprimiert, was kann man tun falls fast eine komplette
+Clique vorhanden ist? $\rightarrow$ Verlinkung hinzufügen. Das Problem ist hier,
+dass dies nicht Verlustfrei ist. Also muss man abwiegen wie wahrscheinlich diese
+Clique ist. \footnote{Vergleiche Algorithmus aus der Präsentation}
+\subsubsection{Drug-Target-Disease Network}
+Medikamente werden mit Zielproteine und Krankheiten in Verbindung gebracht.
+Wenn man bei diesen Graphen die Bi-Cliquen vervollständigt steigt die 
+Kompressionsrate.\footnote{Siehe Seite 43} Dies hat auch im biologischen
+Vorteile. Ein anderes Beispiel ist die Vervollständigung des Graphen mit den
+Herzerkrankungen und dem Parasiten Medikamenten.\\
+Wenn man die Struktur der Medikamente oder die Bindestruktur vergleicht, lassen
+sich Gemeinsamkeiten erkennen. $\rightarrow$ Das spricht für die Vervollständigung.
+\end{document}
