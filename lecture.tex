@@ -338,22 +338,22 @@ Wenn man die Struktur der Medikamente oder die Bindestruktur vergleicht, lassen
 sich Gemeinsamkeiten erkennen. $\rightarrow$ Das spricht für die Vervollständigung.
 
 \newpage
-
-%Rückblick - Nutzen
-Erkennung und Visualisierung von Proteinnetzwerken. 
-
 \section{Vorlesung - Anwendung von Pagerank}
-Inwieweit kann man den Pagerank auf die biomedizinische Themen anwenden und Vergleichen.
-Wie mittelt man über ein Netzwerk. Was für Probleme können auftreten und was verspricht man sich davon?
+In dieser Vorlesung wird die Frage behandelt inwieweit man den Pagerank auf die biomedizinische Themen anwenden und diesen vergleichen kann.
 
 \subsection{Einleitung}
-Vorhersage und Unterscheidung von Krankheitsverläufen (Individualisierte Medizin). Wie kann man den spezifischen Krankheitsverlauf beeinflussen und behandeln. Das Problem an dieser Verfahrensweise sind die klinischen Test. Bei der Individualisierten Medizin braucht man dem entsprechend Versuchsgruppen die groß genug sind um eine Aussage zu geben.\\
-Z.B. die Unterscheidung von der Überlebensrate von Krebs.\footnote{Siehe Seite 5} So fand man 7 Gene welche zu einer 70\% Wahrscheinlichkeit vorhersagen wie der Krebs verlaufen wird. Unter anderen gibt es in diesen Genen eins, welches einen sehr großen Teil der anderen Gene beeinflusst und reguliert.\\
-Ein weiterer Forschungsgegenstand ist der, dass man aus allen möglichen biologischen Paper Relationen aus allen Entitäten herstellt. Damit möchte man herausfinden in welcher Art und Weise und ob Proteine mit einander zu tun haben.
-
+In der heutigen Zeit ist es ein Ziel Vorhersagen und Unterscheidung von Krankheitsverläufen feststellen zu können und dementsprechend Medizin für die Unterschiede bereit zustellen (Individualisierte Medizin). Doch wie kann man den spezifischen Krankheitsverlauf beeinflussen und behandeln? Das Problem an dieser Verfahrensweise sind die klinischen Test, welche ein Medikament erst durchlaufen muss. Bei der Individualisierten Medizin braucht man, wie sonst auch, Versuchsgruppen die groß genug sind um eine signifikante Aussage zu geben.\\
+Z.B. die Unterscheidung bei der Überlebensrate von Krebs (über ein Kapler-Meyer-Plot\footnote{Siehe Seite 5}). So fand man sieben Gene welche zu einer 70\% Wahrscheinlichkeit vorhersagen wie der Krebs verlaufen wird. Unter anderen gibt es in diesen Genen eins, welches einen sehr großen Teil der anderen Gene beeinflusst und reguliert.\\
+Ein weiterer Forschungsgegenstand ist der, dass man aus allen möglichen biologischen Publikationen Relationen aus allen Entitäten erstellt. Damit möchte man herausfinden in welcher Art und Weise und ob Proteine überhaupt mit einander interagieren und sich beeinflussen.\\
+Aus den Zusammenhängen aus den Nebeneffekten von Medikamenten können Profile für diese Medikamente erstellt werden. Diese zeigen, auf was ein Medikament alles reagiert. Daraus können ebenfalls Ontologien aufgebaut werden.
 \subsection{Anwendung des Pagerank in biomedizinischen Anwendungen(Netrank)}
-Was definiert einen guten und einen schlechten Krankheitsverlauf. Wie bestimmt man diese Bewertung. In diesem Fall wurden mehrere Patienten im Median zusammengefasst.\footnote{Siehe Seite 9} Die Frage besteht dort wie und warum wurden diese Klassen in diese Art und Weise definiert.
-\subsubsection{Vorhersagen durch Genen}
+Wenn nun also der Netrank auf Proteinnetzwerke angewendet werden soll stellen sich folgende Fragen:
+\begin{itemize}
+\item[-] Wie definiert man einen guten oder schlechten Krankheitsverlauf?
+\item[-] Wie bestimmt man die Bewertung für solche?
+\item[-] Wie vergleicht man diese Bewertungen miteinander und unter welchen Maßstab?
+\end{itemize}
+\subsubsection{Vorhersagen durch Genexpressionen}
 Bisher wird zur Krebsuntersuchung ein Eingriff gemacht, bei dem Krebszellen aus dem Körper entnommen werden müssen. Das Ziel ist, dass diese Vorhersagen nicht durch einen Eingriff sondern durch die einfache Blutabnahme oder Speichelprobe getätigt werden kann.\footnote{Siehe Seite 10} Bei Blut ist dann aber die Frage, wie etwas, was ich untersuchen möchte überhaupt im Blut zirkuliert. Wie hoch muss die Konzentration sein um eine Aussage treffen zu können?\\
 Bei der Analyse der Gene bei Patienten besteht ein Problem darin, dass man meist nicht viele Testfälle hat. Dementsprechend kann es dadurch zu einem Overfitting des angelerntes Algorithmus kommen.
 \subsubsection{Finden von relevanten Gene in einem Netzwerk}
