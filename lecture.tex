@@ -56,11 +56,11 @@ Grundlagen der Graphentheorie wurde von Euler mittels Königsberger Brücker gel
 \\
 \fbox{
 \begin{tabular}{l l}
-Def:&Graph\\
-&Ein Graph ist\\ 
-&G= (V, E) \\
-&V: Vertex (Knoten)\\
-&E: Edges (Kanten)\\
+Def: & Graph\\
+     & Ein Graph ist\\
+     & G= (V, E) \\
+     & V: Vertex (Knoten)\\
+     & E: Edges (Kanten)\\
 \end{tabular}
 }
 \\ 
@@ -70,16 +70,16 @@ Graphen werden unter anderem für Kürzeste Wege, Zustandbasierten Spielen (z.B.
 
 \fbox{
 \begin{tabular}{l l}
-Def:&Skalenfrei (Scalefree)\\
-&Rich get Richer \\
+Def: & Skalenfrei (Scalefree)\\
+     & Rich get Richer \\
 \end{tabular}
 }
 \\
 
 \fbox{
 \begin{tabular}{l l}
-Def:& Degree Distribution\\
-&Wie verteilt sich die Anzahl der Nachbarn auf die Anzahl der Knoten. Meist sieht dies so aus.\\ 
+Def: & Degree Distribution\\
+     & Wie verteilt sich die Anzahl der Nachbarn auf die Anzahl der Knoten. Meist sieht dies so aus.\\
 \end{tabular}
 }
 \\
@@ -87,8 +87,8 @@ Def:& Degree Distribution\\
 \includegraphics[scale=0.5]{scalefree}\\
 \fbox{
 \begin{tabular}{l l}
-Def:&Performel Preferenz (? Name vll nicht richtig)\\
-&Die mehr haben, kriegen mehr. The rich get richer\\
+Def: & Performel Preferenz (? Name vll nicht richtig)\\
+     & Die mehr haben, kriegen mehr. The rich get richer\\
 \end{tabular}
 }
 
@@ -133,9 +133,9 @@ Findet immer in Hefe statt
 \subsubsection{AP/MS (Afinity prificention with mass spectrometry)}
 \includegraphics[scale=0.5]{APMS}\\
 \begin{tabular}{r l}
-P:&Proteinen\\
-B:&Der Köter an dem die Proteine binden\\
-Tag:&Wird an eine Oberfläche gebunden\\
+P:   & Proteinen\\
+B:   & Der Köter an dem die Proteine binden\\
+Tag: & Wird an eine Oberfläche gebunden\\
 \end{tabular}
 \\
 
@@ -370,8 +370,79 @@ Verbessert nun Netrank wirklich das Ergebnis? Dies hängt von mehreren Faktoren 
 Es wurde getestet welcher Damping Factor die besten Vorhersagen treffe.\footnote{Siehe Seite 33} Man kann erkennen das es zwei verschiedene Gruppen gibt. Eine, die bei einem kleinen Damping Factor gut vorherbestimmen und die anderen, die dies bei einem hohen tun. Da stellt sich nun aber die Frage ob die Netzwerke mit einem kleineren Damping Factor besser werden, wenn diese Netzwerke verbessert und vervollständigt werden.
 \subsection{Wie einzigartig sind Signaturen}
 Wir vergleichen zwei Hypothesen: Jeder Krebs ist anders und somit sollten Signaturen sich nicht überschneiden. gegen Krebsarten haben gewisse Gemeinsamkeiten, damit sollten die Signaturen zu einem gewissen Grad überschneiden.\footnote{Siehe Seite 38}
-\subsection{Zussammenfassung}
-Netzwerke können helfen Krankheiten vorrauszusagen. Dafür braucht man Gen Expressionsdaten. Mit den richtigen Algorithmen und ... 
+\subsection{Zusammenfassung}
+Netzwerke können helfen Krankheiten vorauszusagen. Dafür braucht man Gen Expressions Daten. Mit den richtigen Algorithmen und ... 
+
+\subsection{Vorlesung - Einführung in die Genetik}
+
+Dieses ganze Feld ist erst circa 15 Jahre alt und es wird momentan sehr stark daran geforscht.
+
+Es werden sehr große Datenmengen erzeugt welche mit Hilfe von Computern verarbeitet werden
+sollen.
+
+\subsection{Übersicht über eukariotische Gene}
+Man kann generell sagen, dass Eukarioten größere Gene haben.
+\\
+Die Anzahl der Gene ist aber nicht unbedingt von der Komplexität des Organismuses abhängig.
+Die Anzahl der Gene bleibt relativ gleich verteilt. 
+\\
+Auch ist die Anzahl der kodierenden Gene abhängig.
+\\
+Vielleicht aber andere Faktoren. \footnote{Siehe Seite 12 - ich bin mit dem Schreiben nicht mitgekommen}
+
+\subsection{Der Inhalt von Genen}
+\subsubsection{coding RNAs}
+Bei der Transkription\footnote{Seite 15, 16} werden Introns und Exons zusammen "gespliced" hierbei
+können unterschiedliche Möglichkeiten auftreten.\footnote{Seite 17}\\
+
+Das wird am Beispiel der Fruchtfliege deutlich.\footnote{Seite 18}\\ 
+
+\subsubsection{non-coding RNAs}
+non-coding RNAs werden nicht übersetzt.\footnote{Seite 20}\\
+
+miRNAs regulieren die Transkription von Genen. Falls miRNAs nicht perfekt binden werden werden 
+die Gene "silenced".\footnote{Seite 21} Dies macht es einfach Gene auszuschalten. \\
+
+
+\subsubsection{regulatory elements}
+Enhancer - verstärken Genausdrücke\\
+Insulator - unterdrückt die Verstärkung von bestimmten Genen \footnote{Seite 25}\\
+
+Enhancer sind von der Ausrichtung und dem Ort unabhängig. Enhancer können weit von ihrem "Ziel"
+entfernt sein.\\
+Warum das so funktioniert ist noch nicht vollständig erforscht. Es wird aber angenommen, dass
+es "loops" also Schlingen gibt die den Promoter und Enhancer räumlich nahe bringen.\footnote{Seite 27}\\
+
+Auf Seite 30 wird doch deutlich, dass die Position und Ausrichtung von manchen Enhancern WICHTIG ist.
+\footnote{davor habe ich etwas anderes behauptet... vielleicht noch mal überarbeiten}\\
+
+Wie werden Enhanver eigentlich getestet?\footnote{Seite 33 - tut mir leid bin auch hier nicht mitgekommen}\\
+\begin{enumerate}
+\item transgenic reporter assays
+\item chromatin state profiling
+\item computational predictions
+\end{enumerate}
+
+\subsubsection{repeats}
+Ab hier Text einfach von den Slides lesen.\\
+
+Seite 44: Pseudogenes können trotz ihrer Augenscheinlichen Funktionslosigkeit Auswirkungen haben. Dies
+wird hier deutlich, da das Pseudogene das miRNA aufsaugt und so den repressiven Charakter unterdrückt.\\
+
+Seite 47 wurde übersprungen!\\
+
+Seite 48 habe ich nicht mitbekommen\\
+
+Seite 49,50 wurden übersprungen! \\
+
+\subsection{Contraint and Function}
+\subsubsection{Conservation vs. Constraint}
+Bitte selbst lesen.\\
+
+Seite 72: Nur kleine Regionen codieren wirklich.\\
+
+Seite 73-76 wurden übersprungen!\\
+
 
 
 \end{document}
